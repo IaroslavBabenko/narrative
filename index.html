@@ -4,10 +4,14 @@
     <meta charset="utf-8">
     <title>My First Bitstarter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css"> 
     <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" 
 	  rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js">
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js">
     <style type="text/css">
       
       /* Large desktop */
@@ -15,7 +19,24 @@
         body {
           padding-top: 60px;
         }
+        .linediv-l {
+          border-right: 1px white solid;
+        }
+        .linediv-r {
+          border-left: 1px white solid;
+        }
       }
+
+      /* Landscape phones and down */
+      @media (max-width: 480px) {
+        .linediv-l {
+          border-bottom: 1px white solid;
+        }
+        .linediv-r {
+          border-top: 1px white solid;
+        }
+      }
+
       /* Main body and headings */
       body {
         font-family: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -33,18 +54,26 @@
       .pitch {
         padding: 2.5% 0%;
       }
+      .actions {
+        background-color: #343434;
+        padding: 3% 0%
+      }
        .container {
 	 width: 960px;
        }
-       .navigation, .pitch, .section1, .section2, .faq, .footer {
-	 padding: 10px 0px 10px 0px;
-       }
-       .video, .thermometer, .order, .social {
+       .video, .thermometer, .order, .social, .statistics {
 	 text-align: center;
-       }
-       div.row {
-	 border: 1px solid;
-       }
+      }
+      
+      /* Marketing copy and footer */
+      .copy {
+        padding-top: 2.5%;
+        padding-bottom: 2.5%;
+        text-align: justify;
+      }
+      .asset {
+        padding: 2.5% 0%;
+      }
      </style>
    </head>
    <body>
@@ -71,6 +100,8 @@
      </div>
 
      <div class="container">
+       
+       <!-- Heading and subheading -->
        <div class="row-fluid heading">
 	 <div class="span12">
 	   <h1>Product</h1>
@@ -81,72 +112,140 @@
 	   <p class="lead">One sentence description.</p>
 	 </div>
        </div>
-
+       
+       <!-- Video place holder -->
        <div class="row-fluid pitch">
 	 <div class="span5 offset1 video">
 	   <img class="img-polaroid" src="http://placehold.it/480x300">
 	 </div>
        </div>
+       
+      <!-- We've define a new 'actions' div to contain statistics, order and share buttons. -->
+      <div class="span5 actions">
+	<div class="span8 offset2">
+	  <div class="statistics">
+	    <div class="span4">
+	      <div class="linediv-l">
+		<h3>1000</h3> <p>bakers</p>
+	      </div>
+	    </div>
+	    <div class="span4">
+	      <div class="linediv-c">
+		<h3>$7000</h3> <p> of $10,000</p>
+	      </div>
+	    </div>
+	    <div class="span4">
+	      <div class="linediv-r">
+		<h3>10</h3> <p>days left</p>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<!-- Bootstrap progress bar -->
+	<div class="span10 offset1">
+	  <div class="thermometer progress active">
+	    <div class="bar bar-success" style="width: 60%"></div>
+	    <div class="bar bar-warning" style="width: 40%"></div>
+	  </div>
+	</div>	
+	<!--Standard Bootstrap button -->
+	<div class="span6 offset3 order">
+	  <button class="btn btn-success btn-large">Preorder</button>
+	</div>
+	<!-- Social buttons -->
+	 <div class="span8 offset2 social">
+	    <button class="btn btn-twitter"><i class="icon-twitter"></i> | Twitter</button>
+	    <button class="btn btn-facebook"><i class="icon-facebook"></i> | Facebook</button>
+	 </div>	 
+      </div>
+     </div>
+
+     <!-- Beyond this part the marketing copy begins -->
+     <div class="row-fluid section1">
+       <div class="span5 offset1 asset">
+	 <img class="img-polaroid" href="http://placehold.it/480x300">
+       </div>
+       <div class="span5 copy">
+	 <p>
+	   Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+	   Phasellus nec mollis lacus. In tempor eleifend enim sit 
+	   amet hendrerit. Etiam ut leo at leo laoreet porttitor.
+	   Vivamus eget diam eget sapien adipiscing lacinia ac nec dui. 
+	   Duis eu sem bibendum, suscipit odio sit amet, auctor ante. 
+	   Aenean sollicitudin non augue vel convallis. Proin 
+	   luctus est ut quam vehicula adipiscing nec ut libero. Ut et 
+	   libero condimentum, viverra dolor a, luctus neque. Vivamus 
+	   sed mattis lacus. Mauris ultricies, arcu sit amet faucibus 
+	   tincidunt, quam orci adipiscing lectus, ac rhoncus urna nunc 
+	   ac sapien. Sed orci neque, varius id leo vel, semper sodales ante.
+	 </p>
+       </div>
+   </div>
+     
+     <div class="row-fluid section2">
+       <div class="span5 copy copy-right">
+	 <p>
+	   Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+	   Phasellus nec mollis lacus. In tempor eleifend enim sit 
+	   amet hendrerit. Etiam ut leo at leo laoreet porttitor.
+	   Vivamus eget diam eget sapien adipiscing lacinia ac nec dui. 
+	   Duis eu sem bibendum, suscipit odio sit amet, auctor ante. 
+	   Aenean sollicitudin non augue vel convallis. Proin 
+	   luctus est ut quam vehicula adipiscing nec ut libero. Ut et 
+	   libero condimentum, viverra dolor a, luctus neque. Vivamus 
+	   sed mattis lacus. Mauris ultricies, arcu sit amet faucibus 
+	   tincidunt, quam orci adipiscing lectus, ac rhoncus urna nunc 
+	   ac sapien. Sed orci neque, varius id leo vel, semper sodales ante.
+	 </p>
+       </div>
+       <div class="span5 asset">
+	 <img class="img-polaroid" href="http://placehold.it/480x300">
+       </div>
+   </div>
+
+     <!-- FAQ section -->
+     <div class="row-fluid faq">
+       <div class="span10 offset1">
+	 <h3>FAQ</h3>
+	 <div class="accordion" id="accordion2">
+	   <div class="accordion-group">
+	     <div class="accordion-heading">
+	       <a class="accordion-toogle" data-toogle="collapse"
+		  data-parent="#accordion2" href="collapseOne">
+		 What does FAQ stand for?
+	       </a>
+	     </div>
+	     <div id="collapseOne" class="accordion-body collapse">
+	       <div class="accordion-innner">
+		 Frequently Asked Questions.
+	       </div>
+	     </div>
+	   </div>
+	   <div class="accordion-group">
+	     <div class="accordion-heading">
+	       <a class="accordion-toogle" data-toogle="collapse"
+		  data-parent="#accordion2" href="collapseTwo">
+		 What's a Frequently Asked Question?
+	       </a>
+	     </div>
+	     <div id="collapseTwo" class="accordion-body collapse">
+	       <div class="accordion-innner">
+		 A question which is commobly asked by users.
+	       </div>
+	     </div>
+	   </div>
+	 </div>
+       </div>
+       
+       <!-- Footer -->
+       
+   
+	   
 
 
-      <div class="row navigation">
-        <div class="span2 logo">
-          Logo
-        </div>
-        <div class="span6 blank">
-          Blank
-        </div>
-        <div class="span4 about">
-          About
-        </div>
-      </div>
-      <div class="row heading">
-        <div class="span12">
-          <h1>Bitstarter Title</h1>
-        </div>
-      </div> 
-     <div class="row subheading">
-        <div class="span12">
-          <p class="lead">This is my first bitstarter project.</p>
-        </div>
-      </div>
-      <div class="row pitch">
-        <div class="span6 video">
-          Video
-        </div>
-        <div class="span6">
-          <div class="thermometer">
-            Thermometer
-          </div>
-          <div class="order">
-            Order
-          </div>
-          <div class="social">
-            Social
-          </div>
-        </div>
-      </div>
-      <div class="row section1">
-        <div class="span12">
-          Marketing Section 1
-        </div>
-      </div>
-      <div class="row section2">
-        <div class="span12">
-          Marketing Section 2
-        </div>
-      </div>
-      <div class="row faq">
-        <div class="span12">
-          FAQ
-        </div>
-      </div>
-      <div class="row footer">
-        <div class="span12">
-          Footer
-        </div>
-      </div>
-    </div>
-  </body>
+
+
+   </body>
 </html>
 
